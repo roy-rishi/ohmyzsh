@@ -52,5 +52,5 @@ ZSH_THEME_GIT_PROMPT_SUFFIX=")"
 ZSH_THEME_GIT_PROMPT_DIRTY="*"
 ZSH_THEME_GIT_PROMPT_CLEAN=""
 
-PROMPT='$(_bold)$(_error_color)➜ $(username):%{$reset_color%}$(_bold)$(directory)%{$reset_color%}$(_bold)$(git_prompt_info)%{$reset_color%} $'
-RPROMPT='$(_error_color)↑ $(_error_symbol) %{$reset_color%}$(current_time)'
+PROMPT='$(_bold)$(_green)➜ $(username)%{$reset_color%}$(_bold):$(directory)%{$reset_color%}$(_bold)$(git_prompt_info)%{$reset_color%} $ '
+RPROMPT=''
