@@ -1,56 +1,27 @@
-username() {
-  echo "%m"
+# data
+hostname="%m"
+directory="%4~"
+
+# colors
+_mint=$'%F{#9AD1A2}'
+_pink="%{$FG[183]%}"
+_red=$"%F{red}"
+
+# formatting
+_bold="%B"
+new_line=$'\n'
+
+# hook
+preexec() {
+  echo -ne '\e[22m'  # stop boldface
 }
 
-directory() {
-  echo $(_pink)"%2~%{$reset_color%}"
-}
-
-current_time() {
-    echo "%*"
-}
-
-_error_color() {
-  echo "%{%(?.$(_green).$(_red))%}"
-}
-
-_error_symbol() {
-  echo "%{%(?.✔︎.✘)%}"
-}
-
-_green() {
-  echo "%{$FG[010]%}"
-}
-
-_blue() {
-  echo "%{$FG[039]%}"
-}
-
-_pink() {
-  echo "%{$FG[183]%}"
-}
-
-_yellow() {
-  echo "%F{yellow}"
-}
-
-_white() {
-  echo "%F{white}"
-}
-
-_red() {
-  echo "%F{red}"
-}
-
-_bold() {
-  echo "%B"
-}
-
-
-ZSH_THEME_GIT_PROMPT_PREFIX=":git("
+# git
+ZSH_THEME_GIT_PROMPT_PREFIX=":("
 ZSH_THEME_GIT_PROMPT_SUFFIX=")"
 ZSH_THEME_GIT_PROMPT_DIRTY="*"
 ZSH_THEME_GIT_PROMPT_CLEAN=""
 
-PROMPT='$(_bold)$(_green)➜ $(username)%{$reset_color%}$(_bold):$(directory)%{$reset_color%}$(_bold)$(git_prompt_info)%{$reset_color%} $ '
+# prompts
+PROMPT='${_bold}${_mint}${hostname}%f:${_pink}${directory}%f$(git_prompt_info)${new_line}%f $ '
 RPROMPT=''
