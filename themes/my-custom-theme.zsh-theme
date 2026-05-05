@@ -23,5 +23,5 @@ ZSH_THEME_GIT_PROMPT_DIRTY="*"
 ZSH_THEME_GIT_PROMPT_CLEAN=""
 
 # prompts
-PROMPT='${_bold}${_mint}${hostname}%f:${_pink}${directory}%f$(git_prompt_info)${new_line}%f $ '
+PROMPT='${_bold}${_mint}${hostname}%f:${_pink}${directory}%f$(git_prompt_info)${new_line}%f$ '
 RPROMPT=''
